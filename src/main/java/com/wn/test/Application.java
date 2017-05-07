@@ -16,6 +16,8 @@ public class Application {
     public String greeting() {
         return "Hello World!";
     }
+    
+    
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
