@@ -78,6 +78,16 @@
             <artifactId>swagger-springmvc</artifactId>
             <version>0.9.5</version>
         </dependency>
+        <!-- redis -->
+        <dependency>  
+          <groupId>org.springframework.boot</groupId>  
+          <artifactId>spring-boot-starter-redis</artifactId>  
+      </dependency>
+      <!--Gson-->  
+        <dependency>  
+            <groupId>com.google.code.gson</groupId>  
+            <artifactId>gson</artifactId>  
+        </dependency>  
 	</dependencies>
 	<build>
 		<plugins>

@@ -1,0 +1,2 @@
+springBoot ＋ myBatis ＋ mySql
+1、含有注解的类要和application类包下。
