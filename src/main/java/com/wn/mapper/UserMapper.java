@@ -1,5 +1,7 @@
 package com.wn.mapper;
 
+import java.util.List;
+
 import com.wn.model.User;
 /**
  * 
@@ -8,6 +10,6 @@ import com.wn.model.User;
  */
 public interface UserMapper {
 	
-	public User findUserInfo();
+	public List<User> findUserInfo();
 
 }

@@ -1,5 +1,9 @@
 package com.wn.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +20,7 @@ import com.wn.service.UserService;
  *
  */
 @Controller
+@RequestMapping("user")
 public class UserJSONController {
 	 private Logger logger = Logger.getLogger(UserJSONController.class);
 	 
@@ -28,13 +33,16 @@ public class UserJSONController {
 	 
 	    @RequestMapping("/getUserInfo")
 	    @ResponseBody
-	    public User getUserInfo() {
-	        User user = userService.getUserInfo();
-	        if(user!=null){
-	            System.out.println("user.getName():"+user.getName());
-	            logger.info("user.getAge():"+user.getAge());
-	        }
-	        return user;
+	    public Map<String,Object> getUserInfo(String name,Integer pageNumber,Integer pageSize) {
+	    	System.out.println(pageNumber);
+	    	System.out.println(name);
+	    	System.out.println("------------->" + pageSize);
+	    	Map<String,Object> resultMap = new HashMap<String,Object>();
+	        List<User> user = userService.getUserInfo();
+	        resultMap.put("rows", user);
+	        resultMap.put("total",user.size());
+	        System.out.println(user.get(0).getName());
+	        return  resultMap;
 	    }
 	    
 	    

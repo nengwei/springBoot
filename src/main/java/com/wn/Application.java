@@ -6,10 +6,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -26,7 +29,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @SpringBootApplication
 @ComponentScan
 @MapperScan("com.wn.mapper")
-public class Application {
+public class Application  extends SpringBootServletInitializer implements CommandLineRunner{
 	
 	private static Logger logger = Logger.getLogger(Application.class);
 	 
@@ -63,5 +66,15 @@ public class Application {
         SpringApplication.run(Application.class, args);
         logger.info("============= SpringBoot Start Success =============");
     }
+    
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
+    	return builder.sources(Application.class);
+    }
+    
+	@Override
+	public void run(String... arg0) throws Exception {
+		
+	}
 	
 };
