@@ -28,7 +28,7 @@ public class UserJSONController {
 	    private UserService userService;
 	 
 	    /*
-	     *  http://localhost:8080/getUserInfo
+	     *  http://localhost:8080/user/getUserInfo
 	     */
 	 
 	    @RequestMapping("/getUserInfo")
