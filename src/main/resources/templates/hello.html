@@ -5,9 +5,8 @@
 <title>bootStrap test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="/css/bootstrap-table.min.css"
-	type="text/css" />
+<link rel="stylesheet" href="/bootStrap/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="/bootStrap/css/bootstrap-table.min.css" type="text/css" />
 <script th:src="@{/bootStrap/js/jquery-3.2.1.min.js}"></script>
 <script th:src="@{/bootStrap/js/bootstrap.min.js}"></script>
 <script th:src="@{/bootStrap/js/bootstrap.js}"></script>
@@ -16,11 +15,6 @@
 <script th:src="@{/js/hello.js}"></script>
 </head>
 <body>
-	<p th:text="'Hello, ' + ${name} + '!'" />
-	<div class="starter-template">dscsdcdscds</div>
-	<h1>lsdlk</h1>
-	<button type="button" class="btn">基本按钮</button>
-
 	<div class="panel panel-default">
 		<div class="panel-heading">查询条件</div>
 		<div class="panel-body form-group" style="margin-bottom: 0px;">
@@ -60,8 +54,7 @@
 		//initTable();
 	})
 	var $table = $('#test-table');
-	$table
-			.bootstrapTable({
+	$table.bootstrapTable({
 				method : "post",
 				contentType : "application/x-www-form-urlencoded",//必须要有！！！！
 				striped : true, //是否显示行间隔色

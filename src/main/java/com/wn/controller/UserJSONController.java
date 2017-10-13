@@ -35,13 +35,11 @@ public class UserJSONController {
 	    @ResponseBody
 	    public Map<String,Object> getUserInfo(String name,Integer pageNumber,Integer pageSize) {
 	    	System.out.println(pageNumber);
-	    	System.out.println(name);
 	    	System.out.println("------------->" + pageSize);
 	    	Map<String,Object> resultMap = new HashMap<String,Object>();
 	        List<User> user = userService.getUserInfo();
 	        resultMap.put("rows", user);
 	        resultMap.put("total",user.size());
-	        System.out.println(user.get(0).getName());
 	        return  resultMap;
 	    }
 	    

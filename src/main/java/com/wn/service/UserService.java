@@ -10,11 +10,11 @@ import com.wn.model.User;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserMapper userMapper;
-	
-	public List<User> getUserInfo(){
+
+	public List<User> getUserInfo() {
 		return userMapper.findUserInfo();
 	}
 

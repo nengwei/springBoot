@@ -1,6 +1,12 @@
 package com.wn.model;
 
-public class User {
+import java.io.Serializable;
+
+import com.wn.common.BaseEntity;
+
+public class User extends BaseEntity implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private int id;
 	private String name;
